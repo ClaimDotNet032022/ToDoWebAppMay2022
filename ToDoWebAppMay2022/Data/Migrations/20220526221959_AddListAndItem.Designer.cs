@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using ToDoWebAppMay2022.Data;
@@ -11,9 +12,10 @@ using ToDoWebAppMay2022.Data;
 namespace ToDoWebAppMay2022.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220526221959_AddListAndItem")]
+    partial class AddListAndItem
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -247,7 +249,7 @@ namespace ToDoWebAppMay2022.Data.Migrations
 
                     b.HasIndex("ParentListId");
 
-                    b.ToTable("ToDoItems");
+                    b.ToTable("ToDoItem");
                 });
 
             modelBuilder.Entity("ToDoWebAppMay2022.Data.Entities.ToDoList", b =>
@@ -270,7 +272,7 @@ namespace ToDoWebAppMay2022.Data.Migrations
 
                     b.HasIndex("OwnerId");
 
-                    b.ToTable("ToDoLists");
+                    b.ToTable("ToDoList");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

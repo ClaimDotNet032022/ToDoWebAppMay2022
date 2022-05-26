@@ -6,5 +6,7 @@ namespace ToDoWebAppMay2022.Data.Entities
     {
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
+
+        public List<ToDoList> ToDoLists { get; set; } = default!;
     }
 }

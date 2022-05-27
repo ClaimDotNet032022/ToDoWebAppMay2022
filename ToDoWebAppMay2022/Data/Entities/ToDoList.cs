@@ -9,6 +9,6 @@
         public string OwnerId { get; set; }
 
         public AppUser? Owner { get; set; }
-        public List<ToDoItem> Items { get; set; } = default!;
+        public List<ToDoItem>? Items { get; set; } = default!;
     }
 }
